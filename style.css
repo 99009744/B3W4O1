@@ -13,34 +13,58 @@
 #headertext{
     color: black;
     text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
+    margin-top: 0px;
 }
-#characters{
+#characterslist{
     width: 1000px;
-    height: 720px;
+    height: 770px;
     border: white 2px solid;
     margin: 0 auto;
     border-radius: 25px;
 }
+.characters{
+    width: 470px;
+    height: 130px;
+    border-bottom: 2px solid red;
+    margin: 10px;
+    display: inline-block;
+    font-family: 'Orbitron', sans-serif;
+}
 img{
     height: 100px;
     width: 100px;
+    border-radius: 50%;
+    border: red solid 2px;
 }
-.charactersprofiles{
-    width: 420px;
-    height: 120px;
-    border-bottom: red solid 1px;
-    margin: 10px 30px;
+h2{
+    margin: 0;
+}
+h4{
+    margin: 0;
+    font-size: 16px;
     display: inline-block;
 }
-#bowserimage, #buffyimage, #buzzimage, #captianamerica, #catwomanimage, #conanimage, #quinnimage, #marioimage, #shrekimage, #zeldaimage{
-    border: solid 2px red;
-    border-radius: 50%;
+i{
+    margin-right: 20px;
+    width: 1px;
+}
+.avatar{
+    float: left;
+}
+.inspect{
+    float: right;
+    width: 100px;
+}
+
+.stats{
+    margin-left: 125px;
 }
 #footer{
     border: red 2px solid;
     width: 1000px;
     height: 60px;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 25px;
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
