@@ -34,7 +34,7 @@
                 echo '<i class="fas fa-shield-alt"></i>';
                 echo '<h4>' . $result['defense'] . '</h4><br>';
                 echo '</div>';
-                echo '<a href="character.php" class="inspect"><i class="fas fa-search"></i>bekijk</a>';
+                echo '<a href="character.php?id=' . $result['id'] . '" class="inspect"><i class="fas fa-search"></i>bekijk</a>';
                 echo '</div>';
             }
         ?>
