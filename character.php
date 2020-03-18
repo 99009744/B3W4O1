@@ -1,10 +1,5 @@
 <?php
     include_once ("dblink.php");
-    include_once ("dblink.php");
-    $id = $_GET['id'];
-    $sql = 'SELECT * FROM characters WHERE id = ' . $id . ';';
-    $query = mysqli_query($conn, $sql);
-    $result = mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>
@@ -20,33 +15,33 @@
 </head>
 <body>
 <div id="header">
-<?php 
-    echo '<h1 class="headertext">' . $result['name'] . '</h2>';
+<?php
+    $getresult = $_GET['name'];
+    $sql = $conn->prepare("SELECT * FROM characters where name = :name;");
+    $sql->execute( [":name" => $getresult] );
+    $results = $sql->fetchAll();
+    echo '<h1 class="headertext">' . $results[0]['name'] . '</h2>';
+    echo '<a href="index.php" id="back">back</a>';
     ?>
 </div>
 
 <div id="characterslist">
     <?php
         echo '<div id="info">';
-        echo '<img src="images/' . $result['avatar'] . '" id="profilepicture">';
-        echo '<div id="stats" style="background-color:' . $result['color'] . '">';
+        echo '<img src="images/' . $results[0]['avatar'] . '" id="profilepicture">';
+        echo '<div id="stats" style="background-color:' . $results[0]['color'] . '">';
         echo '<i class="fas fa-heart"></i>';
-        echo '<h4 class="statsinfo">' . $result['health'] . '</h4><br>';
+        echo '<h4 class="statsinfo">' . $results[0]['health'] . '</h4><br>';
         echo '<i class="fas fa-fist-raised"></i>';
-        echo '<h4 class="statsinfo">' . $result['attack'] . '</h4><br>';
+        echo '<h4 class="statsinfo">' . $results[0]['attack'] . '</h4><br>';
         echo '<i class="fas fa-shield-alt"></i>';
-        echo '<h4 class="statsinfo">' . $result['defense'] . '</h4><br>';
+        echo '<h4 class="statsinfo">' . $results[0]['defense'] . '</h4><br>';
         echo '<h4 class="statsinfo">Weapon: </h4>';
-        echo '<p class="statsinfo">' . $result['weapon'] . '</p><br>';
-        if($result['armor'] = "NULL"){
-
-        }
-        else{
-            echo '<h4 class="statsinfo">Armor: </h4>';
-            echo '<p class="statsinfo">' . $result['armor'] . '</p><br>';
-        }
+        echo '<p class="statsinfo">' . $results[0]['weapon'] . '</p><br>';
+        echo '<h4 class="statsinfo">Armor: </h4>';
+        echo '<p class="statsinfo">' . $results[0]['armor'] . '</p><br>';
         echo '</div>';
-        echo '<p id="bio">' . $result['bio'] . '<p><br>';
+        echo '<p id="bio">' . $results[0]['bio'] . '<p><br>';
         echo '</div>';
         echo '</div>';
     ?>

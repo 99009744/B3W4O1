@@ -13,6 +13,7 @@ body{
     color: black;
     text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
     margin-top: 0px;
+    display: inline-block;
 }
 #characterslist{
     width: 1000px;
@@ -97,7 +98,6 @@ i{
     grid-row: 2/3;
     grid-column: 1/2;
 }
-}
 .statsinfo{
     margin-left: 0px;
     color: black;
@@ -112,4 +112,8 @@ i{
     font-size: 16px;
     color: red;
 }
+#back{
+    color: red;
+    float: right;
+    text-decoration: none;
 }

@@ -1,7 +1,6 @@
 <?php
-    include_once("dblink.php")
+    include_once ("dblink.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +14,18 @@
 </head>
 <body>
 <?php
-    include_once ("header.html")
+        $sql = $conn->prepare("SELECT COUNT(*)  FROM characters;");
+        $sql->execute();
+        $header = $sql->fetchAll();
+        echo '<div id="header">';
+        echo '<h1 class="headertext"> All ' . $header[0][0] . ' characters</h1>';
+        echo '</div>'
     ?>
     <div id="characterslist">
         <?php
-            $sql = "SELECT * FROM characters order by name;";
-            $query = mysqli_query($conn, $sql);
-            $results = mysqli_fetch_all($query,MYSQLI_ASSOC);
+            $sql = $conn->prepare("SELECT * FROM characters order by name;");
+            $sql->execute();
+            $results = $sql->fetchAll();
             foreach($results as $result){
                 echo '<div class="characters">';
                 echo '<img src="images/' . $result['avatar'] . '" class="avatar">';
@@ -34,7 +38,7 @@
                 echo '<i class="fas fa-shield-alt"></i>';
                 echo '<h4>' . $result['defense'] . '</h4><br>';
                 echo '</div>';
-                echo '<a href="character.php?id=' . $result['id'] . '" class="inspect"><i class="fas fa-search"></i>bekijk</a>';
+                echo '<a href="character.php?name=' . urlencode($result['name']) . '" class="inspect"><i class="fas fa-search"></i>bekijk</a>';
                 echo '</div>';
             }
         ?>

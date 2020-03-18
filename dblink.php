@@ -3,4 +3,5 @@
     $username = "characteraccount";
     $password = "B3dLnMPUTp5SxVY6";
     $dbname = "charcters";
-    $conn =  mysqli_connect($servername, $username, $password, $dbname);
+    $conn = new PDO("mysql:host=$dbservername;dbname=$dbname", $username, $password);
+    
