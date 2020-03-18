@@ -28,20 +28,20 @@
 <div id="characterslist">
     <?php
         echo '<div id="info">';
-        echo '<img src="images/' . $results[0]['avatar'] . '" id="profilepicture">';
-        echo '<div id="stats" style="background-color:' . $results[0]['color'] . '">';
-        echo '<i class="fas fa-heart"></i>';
-        echo '<h4 class="statsinfo">' . $results[0]['health'] . '</h4><br>';
-        echo '<i class="fas fa-fist-raised"></i>';
-        echo '<h4 class="statsinfo">' . $results[0]['attack'] . '</h4><br>';
-        echo '<i class="fas fa-shield-alt"></i>';
-        echo '<h4 class="statsinfo">' . $results[0]['defense'] . '</h4><br>';
-        echo '<h4 class="statsinfo">Weapon: </h4>';
-        echo '<p class="statsinfo">' . $results[0]['weapon'] . '</p><br>';
-        echo '<h4 class="statsinfo">Armor: </h4>';
-        echo '<p class="statsinfo">' . $results[0]['armor'] . '</p><br>';
+        echo '<img src="images/' . $results[0]['avatar'] . '" id="profilepicture" style="border: ' . $results[0]['color'] . ' solid 2px">';
+        echo '<div id="stats" style="border: solid 2px ' . $results[0]['color'] . '">';
+        echo '<i class="fas fa-heart" style="color:' . $results[0]['color'] . '"></i>';
+        echo '<h4 class="statsinfo"style="color:' . $results[0]['color'] . '">' . $results[0]['health'] . '</h4><br>';
+        echo '<i class="fas fa-fist-raised" style="color:' . $results[0]['color'] . '"></i>';
+        echo '<h4 class="statsinfo" style="color:' . $results[0]['color'] . '">' . $results[0]['attack'] . '</h4><br>';
+        echo '<i class="fas fa-shield-alt" style="color:' . $results[0]['color'] . '"></i>';
+        echo '<h4 class="statsinfo" style="color:' . $results[0]['color'] . '">' . $results[0]['defense'] . '</h4><br>';
+        echo '<h4 class="statsinfo"style="color:' . $results[0]['color'] . '">Weapon: </h4>';
+        echo '<p class="statsinfo"style="color:' . $results[0]['color'] . '">' . $results[0]['weapon'] . '</p><br>';
+        echo '<h4 class="statsinfo" style="color:' . $results[0]['color'] . '">Armor: </h4>';
+        echo '<p class="statsinfo"style="color:' . $results[0]['color'] . '">' . $results[0]['armor'] . '</p><br>';
         echo '</div>';
-        echo '<p id="bio">' . $results[0]['bio'] . '<p><br>';
+        echo '<p id="bio" style="color:' . $results[0]['color'] . '">' . $results[0]['bio'] . '<p><br>';
         echo '</div>';
         echo '</div>';
     ?>

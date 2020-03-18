@@ -30,15 +30,15 @@
                 echo '<div class="characters">';
                 echo '<img src="images/' . $result['avatar'] . '" class="avatar">';
                 echo '<div class="stats">';
-                echo '<h2>' . $result['name'] . '</h2><br>';
-                echo '<i class="fas fa-heart"></i>';
-                echo '<h4>' . $result['health'] . '</h4><br>';
-                echo '<i class="fas fa-fist-raised"></i>';
-                echo '<h4>' . $result['attack'] . '</h4><br>';
-                echo '<i class="fas fa-shield-alt"></i>';
-                echo '<h4>' . $result['defense'] . '</h4><br>';
+                echo '<h2 style="color:' . $result['color'] . '">' . $result['name'] . '</h2><br>';
+                echo '<i class="fas fa-heart" style="color:' . $result['color'] . '"></i>';
+                echo '<h4 style="color:' . $result['color'] . '">' . $result['health'] . '</h4><br>';
+                echo '<i class="fas fa-fist-raised"style="color:' . $result['color'] . '"></i>';
+                echo '<h4 style="color:' . $result['color'] . '">' . $result['attack'] . '</h4><br>';
+                echo '<i class="fas fa-shield-alt" style="color:' . $result['color'] . '"></i>';
+                echo '<h4 style="color:' . $result['color'] . '">' . $result['defense'] . '</h4><br>';
                 echo '</div>';
-                echo '<a href="character.php?name=' . urlencode($result['name']) . '" class="inspect"><i class="fas fa-search"></i>bekijk</a>';
+                echo '<a href="character.php?name=' . urlencode($result['name']) . '" class="inspect" style="color:' . $result['color'] . '"><i class="fas fa-search" style="color:' . $result['color'] . '"></i>bekijk</a>';
                 echo '</div>';
             }
         ?>
